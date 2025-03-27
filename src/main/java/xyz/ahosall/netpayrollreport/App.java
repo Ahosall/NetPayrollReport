@@ -1,12 +1,11 @@
 package xyz.ahosall.netpayrollreport;
 
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+
+import xyz.ahosall.netpayrollreport.windows.HomeWindow;
 
 /**
  * 
@@ -14,19 +13,9 @@ import java.io.IOException;
  */
 public class App extends Application {
 
-    private static Scene scene;
-
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("home"));
-        
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    private static Parent loadFXML(String fxml) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
-        return fxmlLoader.load();
+        HomeWindow.show(stage);
     }
 
     public static void main(String[] args) {

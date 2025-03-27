@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import xyz.ahosall.netpayrollreport.utils.validators.PathValidator;
+import xyz.ahosall.netpayrollreport.windows.DialogWindow;
 
 public class HomeController {
 
@@ -14,7 +15,7 @@ public class HomeController {
   private TextField txtReportPathCiss;
 
   @FXML
-  private void handleGenerator(ActionEvent event) {
+  private void handleGeneratorButton(ActionEvent event) {
     String reportPathDatacon = txtReportPathDatacon.getText();
     String reportPathCiss = txtReportPathCiss.getText();
 
@@ -22,7 +23,7 @@ public class HomeController {
       PathValidator.validate(reportPathDatacon);
       PathValidator.validate(reportPathCiss);
     } catch (IllegalArgumentException iae) {
-      System.err.println(iae.getMessage());
+      DialogWindow.show("Campos Obrigatórios", "Verifique os campos e tente novamente.");
       return;
     }
 

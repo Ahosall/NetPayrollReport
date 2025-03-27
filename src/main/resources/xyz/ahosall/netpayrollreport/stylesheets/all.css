@@ -1,0 +1,9 @@
+.window { 
+  -fx-background-color: white;
+}
+
+.button {
+  -fx-background-color: #55AA55;
+  -fx-color: red;
+  -fx-font-weight: bold;
+}
